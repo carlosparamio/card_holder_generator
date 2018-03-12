@@ -10,15 +10,15 @@ class CardHolderGenerator
 
   def to_scad
     <<-SCAD
-    #{comments}
+#{comments}
 
-    #{header}
+#{header}
 
-    difference() {
-      #{main_cube}
-      #{main_hole}
-      #{gaps}
-    }
+difference() {
+  #{main_cube}
+  #{main_hole}
+  #{gaps}
+}
     SCAD
   end
 
@@ -53,21 +53,21 @@ private
 
   def comments
     <<-COMMENTS
-    // Source: https://github.com/carlosparamio/card_holder_generator
-    // Settings: #{settings.inspect}
+// Source: https://github.com/carlosparamio/card_holder_generator
+// Settings: #{settings.inspect}
     COMMENTS
   end
 
   def header
     <<-HEADER
-    module roundedcube(xdim, ydim, zdim, rdim) {
-      hull() {
-        translate([rdim, rdim, 0]) cylinder(h = zdim, r = rdim);
-        translate([xdim - rdim, rdim, 0]) cylinder(h = zdim, r = rdim);
-        translate([rdim, ydim - rdim, 0]) cylinder(h = zdim, r = rdim);
-        translate([xdim - rdim, ydim - rdim, 0]) cylinder(h = zdim, r = rdim);
-      }
-    }
+module roundedcube(xdim, ydim, zdim, rdim) {
+  hull() {
+    translate([rdim, rdim, 0]) cylinder(h = zdim, r = rdim);
+    translate([xdim - rdim, rdim, 0]) cylinder(h = zdim, r = rdim);
+    translate([rdim, ydim - rdim, 0]) cylinder(h = zdim, r = rdim);
+    translate([xdim - rdim, ydim - rdim, 0]) cylinder(h = zdim, r = rdim);
+  }
+}
     HEADER
   end
 
@@ -77,10 +77,7 @@ private
 
   def main_hole
     <<-MAINHOLE
-    translate([#{external_walls_depth + separators_width}, 0, #{floor_depth}])
-      mirror([0, 1, 0])
-      rotate([90, 0, 0])
-      roundedcube(#{cards_height - separators_width * 2}, #{external_z * 2}, #{external_y + 1}, 10);
+translate([#{external_walls_depth + separators_width}, 0, #{floor_depth}]) mirror([0, 1, 0]) rotate([90, 0, 0]) roundedcube(#{cards_height - separators_width * 2}, #{external_z * 2}, #{external_y + 1}, 10);
     MAINHOLE
   end
 
