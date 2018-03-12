@@ -36,7 +36,7 @@ settings["external_walls_depth"] = ask_value("External walls depth", "Depth of t
 settings["floor_depth"]          = ask_value("Floor depth",          "Depth of the walls at both sides (left and right) of the cards holder.", 3)
 settings["top_margin"]           = ask_value("Top margin",           "Space on top of the cards up to reach the card holder top.", 3)
 settings["separators_width"]     = ask_value("Separators width",     "Amount of material that will hold each set of cards on each side (left and right).", 10)
-settings["separators_depth"]     = ask_value("Separators depth",     "Depth of the walls that separates each set of cards.", 10)
+settings["separators_depth"]     = ask_value("Separators depth",     "Depth of the walls that separates each set of cards.", 3)
 settings["cards_width"]          = ask_value("Cards width",          "Width of each card including sleeves (this will be the height of the card holder hole without the top margin).")
 settings["cards_height"]         = ask_value("Cards height",         "Height of each card including sleeves (this will be the width of the card holder).")
 

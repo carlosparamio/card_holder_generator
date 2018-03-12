@@ -10,6 +10,8 @@ class CardHolderGenerator
 
   def to_scad
     <<-SCAD
+    #{comments}
+
     #{header}
 
     difference() {
@@ -47,6 +49,13 @@ private
 
   def external_z
     cards_width + floor_depth + top_margin
+  end
+
+  def comments
+    <<-COMMENTS
+    // Source: https://github.com/carlosparamio/card_holder_generator
+    // Settings: #{settings.inspect}
+    COMMENTS
   end
 
   def header
