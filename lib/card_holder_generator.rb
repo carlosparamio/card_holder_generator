@@ -77,7 +77,7 @@ module roundedcube(xdim, ydim, zdim, rdim) {
 
   def main_hole
     <<-MAINHOLE
-translate([#{external_walls_depth + separators_width}, #{separators_width}, #{floor_depth}]) mirror([0, 1, 0]) rotate([90, 0, 0]) roundedcube(#{cards_height - separators_width * 2}, #{external_z * 2}, #{external_y - 2 * separators_width}, 10);
+translate([#{external_walls_depth + separators_width}, #{separators_depth}, #{floor_depth}]) mirror([0, 1, 0]) rotate([90, 0, 0]) roundedcube(#{cards_height - separators_width * 2}, #{external_z * 2}, #{external_y - 2 * separators_depth}, 10);
 translate([#{external_walls_depth + separators_width}, 0, #{floor_depth + cards_width * 0.5}]) mirror([0, 1, 0]) rotate([90, 0, 0]) roundedcube(#{cards_height - separators_width * 2}, #{external_z * 2}, #{separators_width}, 10);
 translate([#{external_walls_depth + separators_width}, #{external_y - separators_width}, #{floor_depth + cards_width * 0.5}]) mirror([0, 1, 0]) rotate([90, 0, 0]) roundedcube(#{cards_height - separators_width * 2}, #{external_z * 2}, #{separators_width + 1}, 10);
     MAINHOLE
