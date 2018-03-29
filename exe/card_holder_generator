@@ -32,11 +32,13 @@ end
 
 settings = {}
 
-settings["external_walls_depth"] = ask_value("External walls depth", "Depth of the walls at both sides (left and right) of the cards holder.", 3)
-settings["floor_depth"]          = ask_value("Floor depth",          "Depth of the walls at both sides (left and right) of the cards holder.", 3)
+settings["external_walls_depth"] = ask_value("External walls depth", "Depth of external walls of the cards holder.", 3)
+settings["floor_depth"]          = ask_value("Floor depth",          "Depth of the floor.", 3)
 settings["top_margin"]           = ask_value("Top margin",           "Space on top of the cards up to reach the card holder top.", 3)
 settings["separators_width"]     = ask_value("Separators width",     "Amount of material that will hold each set of cards on each side (left and right).", 10)
 settings["separators_depth"]     = ask_value("Separators depth",     "Depth of the walls that separates each set of cards.", 3)
+settings["magnets_height"]       = ask_value("Magnets height",       "Height of each magner at corners (leave blank if you don't want magnets).", 0)
+settings["magnets_diameter"]     = ask_value("Magnets diameter",     "Diameter of each magner at corners (leave blank if you don't want magnets).", 0)
 settings["cards_width"]          = ask_value("Cards width",          "Width of each card including sleeves (this will be the height of the card holder hole without the top margin).")
 settings["cards_height"]         = ask_value("Cards height",         "Height of each card including sleeves (this will be the width of the card holder).")
 
